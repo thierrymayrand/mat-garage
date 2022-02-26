@@ -3,6 +3,7 @@ import image from "../images/article.png"
 import { Link } from "react-router-dom"
 import Hero from "./home/Hero"
 import Section1 from "./home/Section1"
+import Section2 from "./home/Section2"
 
 
 const MainContainer = styled.div`
@@ -63,7 +64,9 @@ function Home() {
             </Hero>
             <Section1>
             </Section1>
+            <Section2>
 
+            </Section2>
         </MainContainer>
     )
 }

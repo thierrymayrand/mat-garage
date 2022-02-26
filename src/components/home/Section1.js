@@ -31,27 +31,7 @@ width: 70%;
 function Section1() {
 
     const [articles, setArticles] = useState([])
-    useEffect(() => {
 
-        try {
-            async function getArticle() {
-                let items = []
-                const snapshot = await getDocs(collection(db, 'ebook'));
-                snapshot.forEach(doc => {
-                    items.push(doc.data())
-                })
-                setArticles(items)
-
-            }
-
-            getArticle()
-
-        } catch (err) {
-            console.log(err)
-        }
-        console.log(articles)
-
-    }, [])
 
     return (
         <SectionContainer>
