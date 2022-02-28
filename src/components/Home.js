@@ -7,7 +7,7 @@ import Section2 from "./home/Section2"
 
 
 const MainContainer = styled.div`
-
+margin-bottom: 100px;
  `
 
 

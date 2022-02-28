@@ -2,9 +2,8 @@ import styled from "styled-components"
 
 
 const ArticleItemContainer = styled.div`
-display: flex;
-gap: 50px;
 margin-top: 40px;
+width: auto;
 `
 
 const Image = styled.img`
@@ -21,23 +20,22 @@ font-size: 2em;
 
 `
 const P = styled.p`
-
-color: white;
+color: black;
 font-size: 1.2em;
-width: 40vw;
 `
 
 const TextContainer = styled.div`
-width: 60vw;
+width: 70%;
 `
 
 const Button = styled.button`
-padding: 10px 20px;
+padding: 0;
 background-color: white;
 color: black;
 font-weight: 600;
 border: none;
 font-size: 1.4em;
+margin: 0;
 
 `
 function ArticleItem(props) {

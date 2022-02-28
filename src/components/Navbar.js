@@ -27,6 +27,9 @@ const menuItems = [
     {
         title: "youtube"
     },
+    {
+        title: "admin"
+    },
 
 ]
 

@@ -69,49 +69,60 @@ font-size: 1.3em;
 font-weight: 300;
 line-height: 1.4;
 `
-function ArticleDetail() {
+const Button = styled.a`
+text-align: center;
+display: block;
+width: 100%;
+padding: 15px 0;
+font-weight: 700;
+font-size: 1.4em;
+background-color: rgb(218,216,217);
+color: black;
+text-decoration: none;
+`
+function PlaylistDetail() {
 
-    const { articleId } = useParams()
-    const [article, setArticle] = useState({})
+    const { playlistId } = useParams()
+    const [playlist, setPlaylist] = useState({})
 
     useEffect(() => {
 
         try {
-            async function getArticle() {
-                const docRef = doc(db, "article", articleId);
+            async function getPlaylist() {
+                const docRef = doc(db, "youtube", playlistId);
                 const docSnap = await getDoc(docRef);
 
 
-                setArticle(docSnap.data())
+                setPlaylist(docSnap.data())
 
             }
 
-            getArticle()
+            getPlaylist()
+            console.log(playlist)
 
         } catch (err) {
             console.log(err)
         }
-    }, [articleId])
+    }, [])
 
-    const click = () => {
-        console.log(article)
-    }
+
     return (
         <MainContainer>
+
             <TitleContainer>
                 <SubTitle></SubTitle>
-                <Title>{article.enteredTitle}</Title>
+                <Title>{playlist.title}</Title>
             </TitleContainer>
             <ImageContainer>
-                <Image src={article.imgUrl} />
+                <Image src={playlist.imgUrl} />
                 <ImageSource></ImageSource>
                 <ImageSubTitle></ImageSubTitle>
             </ImageContainer>
 
             <BodyContainer>
-                <BodyTitle>{article.enteredDescription}</BodyTitle>
+                <BodyTitle>{playlist.description}</BodyTitle>
                 <BodyAuthor>
-                    <AuthorImage src={article.imgUrl} />
+                    <AuthorImage src={playlist.imgUrl} />
                     <AuthorTitle>Mathieu Dubreucq</AuthorTitle>
                 </BodyAuthor>
                 <BodyArticle>
@@ -120,11 +131,13 @@ function ArticleDetail() {
                         La ville la plus proche dans ce secteur, côté ukrainien, est Pripiat, mondialement célèbre depuis l’accident de la centrale nucléaire voisine de Tchernobyl en 1986. Cette localité, qui n’est plus habitée, est devenue ces dernières années un lieu touristique.
 
                         Le porte-parole du Kremlin, Dmitri Peskov a lui affirmé que la rencontre aura lieu dans la région de Gomel en Biélorussie sans plus de précisions. Cette région est frontalière notamment de la zone de Pripiat.</P>
+                    <Button href={playlist.url}>Aller a la Playlist</Button>
                 </BodyArticle>
+
             </BodyContainer>
             <LatestArticles />
         </MainContainer>
     )
 }
 
-export default ArticleDetail;
+export default PlaylistDetail;

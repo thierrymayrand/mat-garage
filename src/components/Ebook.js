@@ -7,7 +7,7 @@ import ArticleItem from "./home/ArticleItem"
 import { Link } from "react-router-dom"
 
 const ArticleContainer = styled.div`
-margin: 0 40px;
+
 `
 const Section1 = styled.div`
 background-color: rgb(150,179,222);
@@ -15,12 +15,12 @@ height: 40vh;
 `
 
 const Section2 = styled.div`
-
-`
-const ArticleListContainer = styled.div`
 display: flex;
-gap: 20px;
+gap: 60px;
+margin-left: 20px;
+margin-top: 20px;
 `
+
 const Image = styled.img`
 width: 20vw;
 height: auto;
@@ -35,23 +35,19 @@ const linkStyle = {
     fontSize: "1.1em",
     fontWeight: "600"
 };
+function Ebook() {
 
-const Title = styled.h3`
-
-`
-function Articles() {
-
-    const [articles, setArticles] = useState([])
+    const [ebooks, setEbook] = useState([])
     useEffect(() => {
 
         try {
             async function getArticle() {
                 let items = []
-                const snapshot = await getDocs(collection(db, 'article'));
+                const snapshot = await getDocs(collection(db, 'ebook'));
                 snapshot.forEach(doc => {
                     items.push({ id: doc.id, ...doc.data() })
                 })
-                setArticles(items)
+                setEbook(items)
 
             }
 
@@ -60,7 +56,7 @@ function Articles() {
         } catch (err) {
             console.log(err)
         }
-        console.log(articles)
+        console.log(ebooks)
 
     }, [])
 
@@ -72,21 +68,18 @@ function Articles() {
 
             </Section1>
             <Section2>
-                <Title>All Articles</Title>
-                <ArticleListContainer>
-                    {articles.map(article => {
-                        return (
-                            <Link to={`/article/${article.id}`} style={linkStyle}>
-                                <Image src={article.imgUrl} />
-                                <p>{article.title}</p>
-                            </Link>
+                {ebooks.map(ebook => {
+                    return (
+                        <Link to={`/ebook/${ebook.id}`} style={linkStyle}>
+                            <p>{ebook.enteredTitle}</p>
+                            <Image src={ebook.imgUrl} />
+                        </Link>
 
-                        )
-                    })}
-                </ArticleListContainer>
+                    )
+                })}
             </Section2>
         </ArticleContainer>
     )
 }
 
-export default Articles;
+export default Ebook;

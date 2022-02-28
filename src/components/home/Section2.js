@@ -1,6 +1,13 @@
+import styled from "styled-components";
+
+
+const SectionContainer = styled.div`
+ `
+
+
 function Section2() {
     return (
-        < div ></div >
+        <SectionContainer></SectionContainer>
     )
 }
 

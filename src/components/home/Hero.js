@@ -88,7 +88,7 @@ function Hero() {
                     <P>Accedez au contenus integral de matthieu produit lors de ses 13 dernieres exclusivement ici. Parcourez les ses articles, videos, cours ainsi que ses ebook.</P>
                     <ButtonContainer>
                         <Link to="/ebook" style={linkStyle}>Ebook</Link>
-                        <Link to="/article" style={linkStyle}>Article</Link>
+                        <Link to="/articles" style={linkStyle}>Articles</Link>
                     </ButtonContainer>
                 </TextContainer>
 
