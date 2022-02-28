@@ -24,7 +24,7 @@ color: black;
 
 const RecentArticlesContainer = styled.div`
 display: flex;
-
+gap: 30px;
 
 
 `
@@ -37,7 +37,7 @@ function Section1() {
         try {
             async function getArticle() {
                 let items = []
-                const snapshot = await getDocs(collection(db, 'ebook'));
+                const snapshot = await getDocs(collection(db, 'article'));
                 snapshot.forEach(doc => {
                     items.push({ id: doc.id, ...doc.data() })
                 })
@@ -60,7 +60,7 @@ function Section1() {
             <RecentArticlesContainer>
                 {articles.map((article) => {
                     return (
-                        <ArticleItem desicription={article.enteredDescription} title={article.enteredTitle} image={article.imgUrl} description={article.enteredDescription}></ArticleItem>
+                        <ArticleItem desicription={article.description} title={article.title} image={article.imgUrl}></ArticleItem>
                     )
                 })}
             </RecentArticlesContainer>

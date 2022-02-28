@@ -18,12 +18,29 @@ const Section2 = styled.div`
 
 `
 const ArticleListContainer = styled.div`
+
+`
+
+const ArticleItemContainer = styled.div`
 display: flex;
-gap: 20px;
 `
 const Image = styled.img`
-width: 20vw;
+width: 50vw;
 height: auto;
+
+`
+const TitleDescriptionContainer = styled.div`
+`
+const PT = styled.p`
+margin-top: 5px;
+margin-left: 20px; 
+margin-bottom: 0;
+font-size: 1.8em;
+`
+const PD = styled.p`
+margin-top: 5px;
+margin-left: 20px; 
+font-size: 1.2em;
 `
 const linkStyle = {
     marginTop: '10px',
@@ -37,7 +54,7 @@ const linkStyle = {
 };
 
 const Title = styled.h3`
-
+font-size: 1.6em
 `
 function Articles() {
 
@@ -68,18 +85,23 @@ function Articles() {
     return (
 
         <ArticleContainer>
-            <Section1>
 
-            </Section1>
             <Section2>
-                <Title>All Articles</Title>
+                <Title>Les Articles</Title>
                 <ArticleListContainer>
                     {articles.map(article => {
                         return (
-                            <Link to={`/article/${article.id}`} style={linkStyle}>
-                                <Image src={article.imgUrl} />
-                                <p>{article.title}</p>
-                            </Link>
+                            <ArticleItemContainer>
+                                <Link to={`/article/${article.id}`} style={linkStyle}>
+                                    <Image src={article.imgUrl} />
+                                </Link>
+                                <TitleDescriptionContainer>
+
+
+                                    <PT>{article.title}</PT>
+                                    <PD>{article.description}</PD>
+                                </TitleDescriptionContainer>
+                            </ArticleItemContainer>
 
                         )
                     })}

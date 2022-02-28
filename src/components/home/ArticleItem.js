@@ -3,20 +3,21 @@ import styled from "styled-components"
 
 const ArticleItemContainer = styled.div`
 margin-top: 40px;
-width: auto;
+width: 40%;
 `
 
 const Image = styled.img`
-width: 50%;
+width: 100%;
 height: auto;
+
 `
 
 const Title = styled.h4`
 margin-top: 10px;
 margin-bottom: 0;
-color: white;
+color: black;
 font-weight: 400;
-font-size: 2em;
+font-size: 1.3em;
 
 `
 const P = styled.p`
@@ -26,6 +27,7 @@ font-size: 1.2em;
 
 const TextContainer = styled.div`
 width: 70%;
+
 `
 
 const Button = styled.button`

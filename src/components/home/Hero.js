@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import image from "../../images/article.png"
+
 import { Link } from "react-router-dom"
+import img from "../../images/flowmaster.jpg"
 
 
 const MainContainer = styled.div`
@@ -8,15 +9,21 @@ const MainContainer = styled.div`
  `
 const HeroContainer = styled.div`
  display: flex;
- background-color: rgb(12,86,159);
+ background-image: url(${img});
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
  justify-content: space-between;
- height: 60vh;
- padding: 0 50px;
+ height: 70vh;
+ width: 100%;
+ 
  
  `
 const Left = styled.div`
 align-self: center;
-width: 60%
+width: 60%;
+margin-left: 40px;
+
  `
 const Right = styled.div`
 align-self: center;
@@ -42,8 +49,10 @@ color: rgb(249,249,248);
 `
 
 const P = styled.p`
-font-size: 1.2em;
+font-size: 1.6em;
+font-weight: 200;
 color: white;
+width: 60%;
 `
 
 const EmailContainer = styled.div`
@@ -65,7 +74,7 @@ const Button = styled.button`
 padding: 10px;
 background-color: white;
 color: black;
-border-radius: 10px
+border-radius: 5px
 `
 
 const linkStyle = {
@@ -84,8 +93,8 @@ function Hero() {
         <HeroContainer>
             <Left>
                 <TextContainer>
-                    <Title>13 ans de contenus sportif a un endroit</Title>
-                    <P>Accedez au contenus integral de matthieu produit lors de ses 13 dernieres exclusivement ici. Parcourez les ses articles, videos, cours ainsi que ses ebook.</P>
+                    <Title>Mattieu Dubreucq - Flowmaster Crossfit</Title>
+                    <P>Accedez au contenus integral de matthieu produit lors de ses 13 dernieres annees exclusivement ici. Parcourez les ses articles, videos, cours ainsi que ses ebook.</P>
                     <ButtonContainer>
                         <Link to="/ebook" style={linkStyle}>Ebook</Link>
                         <Link to="/articles" style={linkStyle}>Articles</Link>
@@ -94,7 +103,7 @@ function Hero() {
 
             </Left>
 
-            <Image src={image} />
+
 
         </HeroContainer>
 
