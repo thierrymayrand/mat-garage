@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Hero from "./home/Hero"
 import Section1 from "./home/Section1"
 import Section2 from "./home/Section2"
+import Section3 from "./home/Section3"
 
 
 const MainContainer = styled.div`
@@ -67,6 +68,9 @@ function Home() {
             <Section2>
 
             </Section2>
+            <Section3 />
+
+
         </MainContainer>
     )
 }

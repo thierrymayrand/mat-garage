@@ -47,9 +47,7 @@ function ArticleItem(props) {
             <TextContainer>
                 <Title>{props.title}</Title>
                 <P>{props.description}</P>
-                <Button>
-                    Lire d'avantage
-                </Button>
+
             </TextContainer>
         </ArticleItemContainer>
     )
